@@ -1,5 +1,5 @@
 # PyShooting
-### Flutter UI Exercise Mini App Plant Shop
+### Mini 1945 Game
 <img src="GameStart.png" alt="Intro Screen" width="400px" height="400px"><img src="Playing.png" alt="Playing Screen" width="400px" height="400px">
 
 ## 프로젝트 요약
