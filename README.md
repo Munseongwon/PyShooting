@@ -1,6 +1,6 @@
 # PyShooting
 ### Mini 1945 Game
-<img src="GameStart.png" alt="Intro Screen" width="250px" height="400px"><img src="Playing.png" alt="playing Screen" width="250px" height="400px"><img src="playing.png" alt="Intro Screen" width="250px" height="400px"><img src="exploring.png" alt="Exploring Screen" width="250px" height="400px">
+<img src="GameStart.png" alt="Intro Screen" width="200px" height="400px"><img src="Playing.png" alt="playing Screen" width="200px" height="400px"><img src="playing.png" alt="Intro Screen" width="200px" height="400px"><img src="exploring.png" alt="Exploring Screen" width="200px" height="400px">
 
 ## 프로젝트 요약
 ![Langauge:Python](https://img.shields.io/badge/Language-Python-purple) ![platform:PyGame](https://img.shields.io/badge/Platform-PyGame-pink)
