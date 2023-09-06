@@ -26,4 +26,4 @@
 <br>
 
 ## 시연영상
-https://youtube.com/shorts/lcwC0K8orU8?feature=share
+https://youtu.be/yaYZuceEbYs
