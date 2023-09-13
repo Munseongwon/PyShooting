@@ -4,6 +4,7 @@ from time import sleep
 import pygame
 from pygame.locals import *
 
+# Game Setting
 WINDOW_WIDTH = 480
 WINDOW_HEIGHT = 640
 
@@ -15,7 +16,9 @@ RED = (250, 50, 50)
 FPS = 60
 
 
+# Fighter == Game User Class(Sprite Class)
 class Fighter(pygame.sprite.Sprite):
+    # Element initialization
     def __init__(self):
         super(Fighter, self).__init__()
         self.image = pygame.image.load('img/fighter/fighter.png')
@@ -25,6 +28,8 @@ class Fighter(pygame.sprite.Sprite):
         self.dx = 0
         self.dy = 0
 
+    # Sprite moving localization += Game Screen
+    # Don't escape Game Screen
     def update(self):
         self.rect.x += self.dx
         self.rect.y += self.dy
@@ -35,15 +40,18 @@ class Fighter(pygame.sprite.Sprite):
         if self.rect.y < 0 or self.rect.y + self.rect.height > WINDOW_HEIGHT:
             self.rect.y -= self.dy
 
+    # Draw Sprite Object in the Game Screen
     def draw(self, screen):
         screen.blit(self.image, self.rect)
 
+    # If the Fighter collide the enemies, the fighter explores in the game screen
     def collide(self, sprites):
         for sprite in sprites:
             if pygame.sprite.collide_rect(self, sprite):
                 return sprite
 
 
+# Missile Class => Fighter shoots the enemy
 class Missile(pygame.sprite.Sprite):
     def __init__(self, xpos, ypos, speed):
         super(Missile, self).__init__()
@@ -54,20 +62,24 @@ class Missile(pygame.sprite.Sprite):
         self.speed = speed
         self.sound = pygame.mixer.Sound('music/missile/missile.wav')
 
+    # the missile sound
     def launch(self):
         self.sound.play()
 
+    # shoot the missile
     def update(self):
         self.rect.y -= self.speed
         if self.rect.y + self.rect.height < 0:
             self.kill()
 
+    # hit the aim
     def collide(self, sprites):
         for sprite in sprites:
             if pygame.sprite.collide_rect(self, sprite):
                 return sprite
 
 
+# The Rock Class ==> The enemies
 class Rock(pygame.sprite.Sprite):
     def __init__(self, xpos, ypos, speed):
         super(Rock, self).__init__()
@@ -83,14 +95,17 @@ class Rock(pygame.sprite.Sprite):
         self.rect.y = ypos
         self.speed = speed
 
+    # rock flow down the game screen
     def update(self):
         self.rect.y += self.speed
 
+    # keeps going down the game screen
     def out_of_screen(self):
         if self.rect.y > WINDOW_HEIGHT:
             return True
 
 
+# draw game
 def draw_text(text, font, surface, x, y, main_color):
     text_obj = font.render(text, True, main_color)
     text_rect = text_obj.get_rect()
@@ -98,6 +113,8 @@ def draw_text(text, font, surface, x, y, main_color):
     text_rect.centery = y
     surface.blit(text_obj, text_rect)
 
+
+# If the fighter and rock meet each other, the explosion occurs
 def occur_explosion(surface, x, y):
     explosion_image = pygame.image.load('img/explosion/explosion.png')
     explosion_rect = explosion_image.get_rect()
@@ -110,6 +127,7 @@ def occur_explosion(surface, x, y):
     explosion_sound.play()
 
 
+# Looping the game
 def game_loop():
     default_font = pygame.font.Font('NanumGothic.ttf', 28)
     background_image = pygame.image.load('img/background/background.png')
@@ -241,5 +259,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
