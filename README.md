@@ -4,7 +4,7 @@
 
 ## 프로젝트 요약
 ![Langauge:Python](https://img.shields.io/badge/Language-Python-purple) ![platform:PyGame](https://img.shields.io/badge/Platform-PyGame-pink)
-> 2022.01.11 - 2022.01.14
+> 2022.01.11 - 2022.01.16
  
 > **Python 팀 프로젝트(화면,아이템 디자인1 게임 개발1)**
 * Python 기본 강의를 익히고 난 뒤에 진행한 사이드 게임 프로젝트
